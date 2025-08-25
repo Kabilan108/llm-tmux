@@ -42,7 +42,7 @@ llm -t shassist-default -f tmux:current 'Explain last error'
 
 The plugin registers a fragment loader (`tmux:`) and a template loader (`shassist:`). The fragment loader calls `tmux capture-pane` with a default line count based on `#{history-limit}`, returning one or more fragments (one per pane for `all`). Template loader returns prompts for a shell assistant.
 
-**Credit:** Inspired by Answer.AI’s [`shell_sage`](https://ssage.answer.ai/). ([shell_sage][5])
+**Credit:** Inspired by Answer.AI’s `shell_sage`. ([shell_sage][5])
 
 [1]: https://llm.datasette.io/en/stable/
 [2]: https://man7.org/linux/man-pages/man1/tmux.1.html

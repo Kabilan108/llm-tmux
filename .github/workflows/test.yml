@@ -1,0 +1,25 @@
+name: Test with Pytest
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Run unit tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Sync project with dev dependencies
+        run: uv sync --group dev
+
+      - name: Run pytest
+        run: uv run pytest
